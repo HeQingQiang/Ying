@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {{ super() }}
+    {% if data.age < 18 %}
+        {{ data.name }}
+    {% elif data.age == 18 %}
+        <a href="http://www.shine95.com">你是我永远的宝宝！~~</a>
+        {% set messages = get_flashed_messages() %}
+        {{ messages }}
+    {% else %}
+        对不起，我不认识你！
+    {% endif %}
+{% endblock %}
